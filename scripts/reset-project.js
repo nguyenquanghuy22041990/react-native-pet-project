@@ -36,38 +36,38 @@ const layoutContent = `import { Stack } from "expo-router";
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" />
+      <Stack.Screen name="use_memo_screen" />
     </Stack>
   );
 }
 `;
 
-fs.rename(oldDirPath, newDirPath, (error) => {
-  if (error) {
-    return console.error(`Error renaming directory: ${error}`);
-  }
-  console.log('/app moved to /app-example.');
+// fs.rename(oldDirPath, newDirPath, (error) => {
+//   if (error) {
+//     return console.error(`Error renaming directory: ${error}`);
+//   }
+//   console.log('/app moved to /app-example.');
 
-  fs.mkdir(newAppDirPath, { recursive: true }, (error) => {
-    if (error) {
-      return console.error(`Error creating new app directory: ${error}`);
-    }
-    console.log('New /app directory created.');
+//   fs.mkdir(newAppDirPath, { recursive: true }, (error) => {
+//     if (error) {
+//       return console.error(`Error creating new app directory: ${error}`);
+//     }
+//     console.log('New /app directory created.');
 
-    const indexPath = path.join(newAppDirPath, 'index.tsx');
-    fs.writeFile(indexPath, indexContent, (error) => {
-      if (error) {
-        return console.error(`Error creating index.tsx: ${error}`);
-      }
-      console.log('app/index.tsx created.');
+//     const indexPath = path.join(newAppDirPath, 'index.tsx');
+//     fs.writeFile(indexPath, indexContent, (error) => {
+//       if (error) {
+//         return console.error(`Error creating index.tsx: ${error}`);
+//       }
+//       console.log('app/index.tsx created.');
 
-      const layoutPath = path.join(newAppDirPath, '_layout.tsx');
-      fs.writeFile(layoutPath, layoutContent, (error) => {
-        if (error) {
-          return console.error(`Error creating _layout.tsx: ${error}`);
-        }
-        console.log('app/_layout.tsx created.');
-      });
-    });
-  });
-});
+//       const layoutPath = path.join(newAppDirPath, '_layout.tsx');
+//       fs.writeFile(layoutPath, layoutContent, (error) => {
+//         if (error) {
+//           return console.error(`Error creating _layout.tsx: ${error}`);
+//         }
+//         console.log('app/_layout.tsx created.');
+//       });
+//     });
+//   });
+// });
