@@ -15,18 +15,18 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="index"
+        name="use_memo_screen"
         options={{
-          title: 'Home',
+          title: 'useMemo',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="use_callback_screen"
         options={{
-          title: 'Explore',
+          title: 'useCallback',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
           ),
@@ -38,6 +38,15 @@ export default function TabLayout() {
           title: 'List',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'list' : 'list-outline'} color={color} />
+          ),
+        }}
+      />
+       <Tabs.Screen
+        name="reducer_screen"
+        options={{
+          title: 'Reducer',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'accessibility' : 'accessibility-outline'} color={color} />
           ),
         }}
       />
